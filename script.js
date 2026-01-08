@@ -19,3 +19,29 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
     });
 });
+
+
+// The Konami Code sequence
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+    // Check if the key matches the next step in the sequence
+    if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        
+        // If the full code is entered
+        if (konamiIndex === konamiCode.length) {
+            unlockSecret();
+            konamiIndex = 0; // Reset
+        }
+    } else {
+        konamiIndex = 0; // Reset if they mess up
+    }
+});
+
+function unlockSecret() {
+    // Play a retro sound effect if you want, then redirect
+    alert("ACCESS GRANTED. ENTERING THE VOID.");
+    window.location.href = "secret.html";
+}
