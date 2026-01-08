@@ -55,6 +55,40 @@ body::before {
 }
 
 /* Hero Styles */
+.hero-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-image {
+    flex-shrink: 0;
+    margin-top: 90px;
+    margin-left: 30px;
+}
+
+.profile-picture {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.profile-picture:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.4);
+    transform: translateY(-5px);
+}
+
 .status-badge {
     display: inline-flex;
     align-items: center;
@@ -90,7 +124,7 @@ h1 {
 .subtitle {
     font-size: 1.25rem;
     color: var(--text-dim);
-    max-width: 500px;
+    max-width: 700px;
     line-height: 1.6;
     margin-top: 1.5rem;
 }
@@ -261,6 +295,17 @@ footer {
 @media (max-width: 768px) {
     .leadership-grid {
         grid-template-columns: 1fr;
+    }
+    .hero-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .hero-image {
+        align-self: center;
+    }
+    .profile-picture {
+        width: 220px;
+        height: 220px;
     }
 }
 
